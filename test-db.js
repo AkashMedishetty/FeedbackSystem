@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 
 async function testDatabase() {
-  const uri = 'mongodb+srv://medishettyakash7:VvO0sgS2VqmeaPZJ@feedbacksystem.0kuxgnf.mongodb.net/?retryWrites=true&w=majority&appName=Feedbacksystem';
+  const uri = xx
   const client = new MongoClient(uri);
   
   try {
