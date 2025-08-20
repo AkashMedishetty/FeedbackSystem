@@ -1,35 +1,5 @@
 {
-  "version": 2,
   "name": "patient-feedback-system",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
-  "functions": {
-    "app/api/**/*.js": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
@@ -107,28 +77,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/feedback/(.*)",
-      "destination": "/api/feedback/$1"
-    },
-    {
-      "source": "/api/patients/(.*)",
-      "destination": "/api/patients/$1"
-    },
-    {
-      "source": "/api/analytics/(.*)",
-      "destination": "/api/analytics/$1"
-    },
-    {
-      "source": "/api/reports/(.*)",
-      "destination": "/api/reports/$1"
-    },
-    {
-      "source": "/api/auth/(.*)",
-      "destination": "/api/auth/$1"
     }
   ],
   "redirects": [
