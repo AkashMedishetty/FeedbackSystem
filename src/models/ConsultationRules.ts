@@ -1,0 +1,1 @@
+export { default as ConsultationRules } from '../lib/db/models/ConsultationRules';

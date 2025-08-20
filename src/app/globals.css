@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Light theme variables */
+    --color-background: 255 255 255;
+    --color-foreground: 17 24 39;
+    --color-card: 255 255 255;
+    --color-card-foreground: 17 24 39;
+    --color-popover: 255 255 255;
+    --color-popover-foreground: 17 24 39;
+    --color-primary: 59 130 246;
+    --color-primary-foreground: 248 250 252;
+    --color-secondary: 241 245 249;
+    --color-secondary-foreground: 17 24 39;
+    --color-muted: 241 245 249;
+    --color-muted-foreground: 100 116 139;
+    --color-accent: 241 245 249;
+    --color-accent-foreground: 17 24 39;
+    --color-destructive: 239 68 68;
+    --color-destructive-foreground: 248 250 252;
+    --color-border: 226 232 240;
+    --color-input: 226 232 240;
+    --color-ring: 59 130 246;
+    --color-radius: 0.75rem;
+    
+    /* Legacy tooltip variables */
+    --tooltip-bg: #ffffff;
+    --tooltip-border: #e5e7eb;
+    --tooltip-text: #111827;
+  }
+  
+  .dark {
+    /* Dark theme variables */
+    --color-background: 17 24 39;
+    --color-foreground: 248 250 252;
+    --color-card: 17 24 39;
+    --color-card-foreground: 248 250 252;
+    --color-popover: 17 24 39;
+    --color-popover-foreground: 248 250 252;
+    --color-primary: 59 130 246;
+    --color-primary-foreground: 17 24 39;
+    --color-secondary: 30 41 59;
+    --color-secondary-foreground: 248 250 252;
+    --color-muted: 30 41 59;
+    --color-muted-foreground: 148 163 184;
+    --color-accent: 30 41 59;
+    --color-accent-foreground: 248 250 252;
+    --color-destructive: 239 68 68;
+    --color-destructive-foreground: 248 250 252;
+    --color-border: 30 41 59;
+    --color-input: 30 41 59;
+    --color-ring: 59 130 246;
+    
+    /* Legacy tooltip variables */
+    --tooltip-bg: #374151;
+    --tooltip-border: #4b5563;
+    --tooltip-text: #f9fafb;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Typeform-style focus states */
+  *:focus {
+    outline: 2px solid rgb(var(--color-ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Typeform-style button base */
+  .btn-typeform {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    outline: none;
+  }
+  
+  .btn-typeform:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+  
+  .btn-primary {
+    background-color: #4f46e5;
+    color: white;
+    box-shadow: 0 2px 4px -1px rgba(79, 70, 229, 0.2), 0 1px 2px -1px rgba(79, 70, 229, 0.1);
+  }
+  
+  .btn-primary:hover {
+    background-color: #4338ca;
+    box-shadow: 0 4px 8px -2px rgba(79, 70, 229, 0.25), 0 2px 4px -1px rgba(79, 70, 229, 0.15);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    background-color: #e5e7eb;
+    color: #111827;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
+  
+  .dark .btn-secondary {
+    background-color: #374151;
+    color: #f9fafb;
+  }
+  
+  .dark .btn-secondary:hover {
+    background-color: #4b5563;
+  }
+  
+  /* Typeform-style input base with softer colors */
+  .input-typeform {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #d1d5db;
+    transition: all 0.3s ease;
+    color: #111827;
+  }
+  
+  .input-typeform:focus {
+    outline: none;
+    border-bottom-color: #4f46e5;
+    transform: translateY(-2px);
+  }
+  
+  .input-typeform::placeholder {
+    color: #6b7280;
+  }
+  
+  .dark .input-typeform {
+    color: #f9fafb;
+    border-bottom-color: #6b7280;
+  }
+  
+  .dark .input-typeform:focus {
+    border-bottom-color: #6366f1;
+  }
+  
+  .dark .input-typeform::placeholder {
+    color: #9ca3af;
+  }
+  
+  /* Typeform-style card */
+  .card-typeform {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s;
+  }
+  
+  .dark .card-typeform {
+    background-color: #1f2937;
+    border-color: #374151;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Typeform-style progress bar */
+  .progress-typeform {
+    width: 100%;
+    height: 0.25rem;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .progress-typeform-fill {
+    height: 100%;
+    background-color: #2563eb;
+    transition: all 0.3s ease-out;
+  }
+  
+  .dark .progress-typeform {
+    background-color: #374151;
+  }
+  
+  /* Typeform-style question container */
+  .question-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+  }
+  
+  /* Kiosk-specific styles */
+  .kiosk-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+  }
+  
+  /* Allow text selection and mouse interactions for input elements */
+  .kiosk-container input,
+  .kiosk-container textarea,
+  .kiosk-container [contenteditable],
+  .kiosk-container [role="textbox"] {
+    user-select: text;
+    pointer-events: auto;
+  }
+  
+  /* Touch-friendly button sizes */
+  .btn-touch {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .btn-primary {
+      border: 2px solid #1e40af;
+    }
+    
+    .input-typeform {
+      border-bottom-width: 4px;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Typeform-style text utilities with improved contrast */
+  .text-typeform-question {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+  
+  .text-typeform-description {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-top: 0.5rem;
+    line-height: 1.625;
+  }
+  
+  .dark .text-typeform-question {
+    color: #f9fafb;
+  }
+  
+  .dark .text-typeform-description {
+    color: #e5e7eb;
+  }
+  
+  /* Typeform-style shadows */
+  .shadow-typeform {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-typeform-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Typeform-style rounded corners */
+  .rounded-typeform {
+    border-radius: 0.75rem;
+  }
+  
+  /* Spacing utilities for Typeform layout */
+  .space-typeform > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-typeform-lg > * + * {
+    margin-top: 2rem;
+  }
+}

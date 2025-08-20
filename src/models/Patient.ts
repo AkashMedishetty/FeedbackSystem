@@ -1,0 +1,1 @@
+export { default as Patient } from '../lib/db/models/Patient';

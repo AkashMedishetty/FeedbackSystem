@@ -1,0 +1,21 @@
+{
+  "name": "Patient Feedback System",
+  "short_name": "Patient Feedback",
+  "description": "Hospital patient feedback collection and management system",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "healthcare", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}

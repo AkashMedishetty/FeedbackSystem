@@ -1,0 +1,1 @@
+export { default as HospitalSettings } from '../lib/db/models/HospitalSettings';

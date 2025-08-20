@@ -1,0 +1,1 @@
+export { default as QuestionTemplate } from '../lib/db/models/QuestionTemplate';

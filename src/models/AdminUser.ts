@@ -1,0 +1,1 @@
+export { default as AdminUser } from '../lib/db/models/AdminUser';
